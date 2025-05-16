@@ -3,12 +3,14 @@
 3. create db.py for schema and seed data
 4. build out the schema based on the api.md
 5. run queries on postman to test if output is correct. use EcoVision API - Seed Data Tests.postman_collection.json
+6. build out api.js
+7. build out Filters.jsx
 
 # backend
 - Set up a virtual environment: `python -m venv venv`
 - run venv on git bash `source venv/Scripts/activate`
 - pip install -r requirements.txt
-- fastapi dev app.py
+- to run `fastapi dev app.py --port 5000`
 
 # database
 - mySQL
