@@ -3,19 +3,29 @@
 - mySQL
 
 # Backend Installation
-1. Set up a virtual environment: `python -m venv venv`
-2. Activate the environment:
+### Make sure your on the backend directory on a seperate terminal
+1. cd /backend
+2. create a `.env` and follow the `.env.example`
+3. Set up a virtual environment: `python -m venv venv`
+4. Activate the environment:
     - Windows(git bash): `source venv/Scripts/activate`
     - Windows(cmd): `venv\Scripts\activate.bat`
     - Windows(powershell): `.\venv\Scripts\Activate.ps1`
     - Windows: `venv\Scripts\activate`
     - macOS/Linux: `source venv/bin/activate`
-3. Install requirements `pip install -r requirements.txt`
-4. Run development server `fastapi dev app.py --port 5000`
+5. Install requirements `pip install -r requirements.txt`
+6. Run development server `fastapi dev app.py --port 5000`
+7. Can ignore these warnings and errors. 'Warning: Trigger does not exist
+  await self._query(query)
+⚠️  Skipped measurement 36 due to metric value error.
+⚠️  Skipped measurement 41 due to metric value error.
+⚠️  Skipped measurement 42 due to metric value error.'
 
 # Frontend Installation
-1. npm install
-2. npm run dev
+### Make sure your on the frontend directory on a seperate terminal
+1. cd /frontend
+2. npm install
+3. npm run dev
 
 # Solution Approach
 1. Backend First:
