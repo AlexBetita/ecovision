@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const ANALYSIS_TYPES = [
   { label: "Raw Data", value: "raw" },
   { label: "Weighted Summary", value: "weighted" },

@@ -4,6 +4,14 @@ import ChartContainer from './components/ChartContainer';
 import TrendAnalysis from './components/TrendAnalysis';
 import QualityIndicator from './components/QualityIndicator';
 
+import {
+  getLocations,
+  getMetrics,
+  getClimateData,
+  getClimateSummary,
+  getClimateTrends,
+} from "./api";
+
 function App() {
   const [locations, setLocations] = useState([]);
   const [metrics, setMetrics] = useState([]);
@@ -20,36 +28,39 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   // Existing useEffect for locations and metrics
+  useEffect(() => {
+    (async () => {
+      setLoading(true);
+      try {
+        const locRes = await getLocations();
+        setLocations(locRes.data || []);
+        const metRes = await getMetrics();
+        setMetrics(metRes.data || []);
+      } catch (err) {
+        // handle error
+      } finally {
+        setLoading(false);
+      }
+    })();
+  }, []);
 
   // Updated fetch function to handle different analysis types
   const fetchData = async () => {
     setLoading(true);
     try {
-      const queryParams = new URLSearchParams({
-        ...(filters.locationId && { location_id: filters.locationId }),
-        ...(filters.startDate && { start_date: filters.startDate }),
-        ...(filters.endDate && { end_date: filters.endDate }),
-        ...(filters.metric && { metric: filters.metric }),
-        ...(filters.qualityThreshold && { quality_threshold: filters.qualityThreshold })
-      });
-
-      let endpoint = '/api/v1/climate';
-      if (filters.analysisType === 'trends') {
-        endpoint = '/api/v1/trends';
-      } else if (filters.analysisType === 'weighted') {
-        endpoint = '/api/v1/summary';
-      }
-
-      const response = await fetch(`${endpoint}?${queryParams}`);
-      const data = await response.json();
-      
-      if (filters.analysisType === 'trends') {
-        setTrendData(data.data);
+      let dataRes;
+      if (filters.analysisType === "trends") {
+        dataRes = await getClimateTrends(filters);
+        setTrendData(dataRes.data);
+      } else if (filters.analysisType === "weighted") {
+        dataRes = await getClimateSummary(filters);
+        setClimateData(dataRes.data);
       } else {
-        setClimateData(data.data);
+        dataRes = await getClimateData(filters);
+        setClimateData(dataRes.data);
       }
     } catch (error) {
-      console.error('Error fetching data:', error);
+      console.error("Error fetching data:", error);
     } finally {
       setLoading(false);
     }
