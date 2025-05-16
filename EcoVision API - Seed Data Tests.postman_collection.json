@@ -1,0 +1,264 @@
+{
+	"info": {
+		"_postman_id": "1af63df9-46db-43ac-b34e-c67b7d9891da",
+		"name": "EcoVision API - Seed Data Tests",
+		"description": "Postman tests using sample seed data (Irvine, Tokyo, London).",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6528536"
+	},
+	"item": [
+		{
+			"name": "Get Climate Data - Temperature (Irvine)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/climate?location_id=1&start_date=2025-01-01&end_date=2025-04-15&metric=temperature&page=1&per_page=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"climate"
+					],
+					"query": [
+						{
+							"key": "location_id",
+							"value": "1"
+						},
+						{
+							"key": "start_date",
+							"value": "2025-01-01"
+						},
+						{
+							"key": "end_date",
+							"value": "2025-04-15"
+						},
+						{
+							"key": "metric",
+							"value": "temperature"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "per_page",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Climate Data - Precipitation (Irvine)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/climate?location_id=1&start_date=2025-01-01&end_date=2025-04-15&metric=precipitation&page=1&per_page=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"climate"
+					],
+					"query": [
+						{
+							"key": "location_id",
+							"value": "1"
+						},
+						{
+							"key": "start_date",
+							"value": "2025-01-01"
+						},
+						{
+							"key": "end_date",
+							"value": "2025-04-15"
+						},
+						{
+							"key": "metric",
+							"value": "precipitation"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "per_page",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Locations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/locations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"locations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Metrics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/metrics",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"metrics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Summary - Temperature (Irvine)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/summary?location_id=1&start_date=2025-01-01&end_date=2025-04-15&metric=temperature",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"summary"
+					],
+					"query": [
+						{
+							"key": "location_id",
+							"value": "1"
+						},
+						{
+							"key": "start_date",
+							"value": "2025-01-01"
+						},
+						{
+							"key": "end_date",
+							"value": "2025-04-15"
+						},
+						{
+							"key": "metric",
+							"value": "temperature"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Summary - Irvine",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/summary?location_id=1&start_date=2025-01-01&end_date=2025-04-15&metric=temperature",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"summary"
+					],
+					"query": [
+						{
+							"key": "location_id",
+							"value": "1"
+						},
+						{
+							"key": "start_date",
+							"value": "2025-01-01"
+						},
+						{
+							"key": "end_date",
+							"value": "2025-04-15"
+						},
+						{
+							"key": "metric",
+							"value": "temperature"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Trends - Temperature (Irvine)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/trends?location_id=1&start_date=2025-01-01&end_date=2025-04-15&metric=temperature",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"trends"
+					],
+					"query": [
+						{
+							"key": "location_id",
+							"value": "1"
+						},
+						{
+							"key": "start_date",
+							"value": "2025-01-01"
+						},
+						{
+							"key": "end_date",
+							"value": "2025-04-15"
+						},
+						{
+							"key": "metric",
+							"value": "temperature"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
